@@ -9,6 +9,11 @@ app.get("/termux", (req, res) => {
 app.get("/world", (req, res) => {
   res.send("Hello, World!");
 });
+
+app.get("/:name", (req, res) => {
+  res.send(`Hello, ${req.params.name}!`);
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
